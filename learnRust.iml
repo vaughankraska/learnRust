@@ -8,11 +8,13 @@
       <sourceFolder url="file://$MODULE_DIR$/projects/guessing_game/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/hello_cargo/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/variables/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/ownership/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/projects/control/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/functions/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/guessing_game/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/hello_cargo/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/variables/target" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/ownership/target" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
