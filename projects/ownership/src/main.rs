@@ -28,6 +28,9 @@ fn main() {
     // let s2 = s1;
     // println!("{}, world", s1);
 
-    // todo: left off at "Variables and Data Interacting with Clone"
+    let s1 = String::from("Im gonna get cloned");
+    let s2 = s1.clone();
+
+    println!("s1 = {}, s2 = {}", s1, s2);
 
 }
