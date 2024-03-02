@@ -9,7 +9,9 @@ struct GcdParameters {
 
 fn main() {
     let server = HttpServer::new(|| {
-        App::new().route("/", web::get().to(get_index))
+        App::new()
+            .route("/", web::get().to(get_index))
+            .route("/gcd", web::post().to(post_gcd))
     });
 
     println!("Serving on localhost:3000");
@@ -36,5 +38,31 @@ fn get_index() -> HttpResponse {
 }
 
 fn post_gcd(form: web::Form<GcdParameters>) -> HttpResponse {
-//     left of at :: With this definition in place, we can write our handler function quite easily:
+    if form.n == 0 || form.m ==0 {
+        return HttpResponse::BadRequest()
+            .content_type("text/html")
+            .body("Computing GCD with zero is not going well");
+    }
+
+    let response =
+        format!("The greatest common divisor of the numbers {} and {} is <b>{}</b>\n",
+        form.n, form.m, gcd(form.n, form.m));
+
+    HttpResponse::Ok()
+        .content_type("text/html")
+        .body(response)
+}
+
+fn gcd(mut m: u64, mut n:u64) -> u64 {
+    assert!(n != 0 && m != 0);
+    while m != 0 {
+        if m < n {
+            let temp = m;
+            m = n;
+            n = temp;
+        }
+        m = m % n;
+    }
+
+    n
 }
