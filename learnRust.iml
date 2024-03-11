@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/projects/gcd-actix/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/gcd/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mandelbrot/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/quickreplace/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/projects/control/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/functions/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/guessing_game/target" />
@@ -23,6 +24,7 @@
       <excludeFolder url="file://$MODULE_DIR$/projects/gcd-actix/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/gcd/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/mandelbrot/target" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/quickreplace/target" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
