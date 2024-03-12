@@ -9,7 +9,7 @@ fn main() {
     let args:  Vec<String> = env::args().collect();
 
     if args.len() != 5 {
-        eprintln!("Usage: {} FILE PIXELS UPPERLEFT UPPERRIGHT", args[0]);
+        eprintln!("Usage: {} FILE PIXELS UPPERLEFT LOWERRIGHT", args[0]);
         eprintln!("ex. {} mandel.png 1000x750 -1.2, 0.35 -1, 0.20", args[0]);
         std::process::exit(1);
     }
@@ -23,7 +23,7 @@ fn main() {
 
     let mut pixels = vec![0; bounds.0 * bounds.1];
 
-    // render(&mut pixels, bounds, upper_left, lower_right); // this line runs in single thread
+    // render(&mut pixels, bounds, upper_left, lower_right); // this line runs the same app in single thread
     let threads = 8;
     let rows_per_band = bounds.1 / threads + 1;
     {
