@@ -14,6 +14,9 @@
       <sourceFolder url="file://$MODULE_DIR$/projects/gcd/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mandelbrot/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/quickreplace/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/rust_by_example/custom_types/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/rust_by_example/one/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/rust_by_example/primitives/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/projects/control/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/functions/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/guessing_game/target" />
@@ -25,6 +28,9 @@
       <excludeFolder url="file://$MODULE_DIR$/projects/gcd/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/mandelbrot/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/quickreplace/target" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/rust_by_example/custom_types/target" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/rust_by_example/one/target" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/rust_by_example/primitives/target" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

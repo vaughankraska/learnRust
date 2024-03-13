@@ -10,11 +10,13 @@ struct Unit;
 
 struct Pair(i32, f32);
 
+#[derive(Debug, PartialEq)]
 struct Point {
     x: f32,
     y: f32,
 }
 
+#[derive(Debug, PartialEq)]
 struct Rectangle {
     top_left: Point,
     bottom_right: Point,
@@ -31,7 +33,7 @@ fn rect_area(rect: Rectangle) -> f32 {
             y: bry,
         }
     } = rect;
-    (brx - bry) * (tly - bry)
+    (tlx - brx) * (tly - bry)
 }
 
 #[test]
@@ -46,6 +48,25 @@ fn test_rect_area() {
     //     bottom_right: Point {x: -2., y: 2.}
     // };
     // assert_eq!(rect_area(rectangle_bottom_right_greater_than_top_left), 1.);
+}
+
+fn square(point: Point, length: f32) -> Rectangle {
+    Rectangle {
+        bottom_right: Point {
+            x: point.x - length,
+            y: point.y - length,
+        },
+        top_left: point,
+    }
+}
+
+#[test]
+fn test_square() {
+    assert_eq!(square(Point{x: 0., y: 0.}, 2.),
+    Rectangle {
+        top_left: Point { x: 0., y: 0., },
+        bottom_right: Point {x: -2., y: -2.}
+    });
 }
 
 pub fn exercise() {
