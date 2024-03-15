@@ -1,5 +1,5 @@
 use std::fs::File;
-use std::io::{self, BufRead};
+use std::io::{self, BufRead, BufReader, Lines};
 use std::num::ParseIntError;
 use std::path::Path;
 
@@ -22,7 +22,8 @@ fn main() {
             };
         }
     }
-    println!("ANSWER: {}", answer);
+    part_two();
+    println!("pt 1: ANSWER: {}", answer);
 }
 
 fn get_to_add(char_vector: Vec<char>) -> Result<u32, ParseIntError> {
@@ -34,6 +35,97 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>> wher
     let file = File::open(filename).expect("Could not open file");
     Ok(io::BufReader::new(file).lines())
 }
+
+// Do part two using more than just brute force
+// goals:
+// use struct and implement methods on that struct
+// repeat all methods for the sake of repetition: "Repetition är kunskapens moder"
+// only reference the docs and previous written files
+
+#[derive(Debug)]
+struct Calibration {
+    raw_lines: Vec<String>,
+    parsed_lines: Vec<Vec<u32>>,
+    calibration_values: Vec<u32>,
+}
+enum WrittenOutNumber {
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+}
+impl WrittenOutNumber {
+    fn to_string(&self) -> String {
+        match self {
+            WrittenOutNumber::One => String::from("one"),
+            WrittenOutNumber::Two => String::from("two"),
+            WrittenOutNumber::Three => String::from("three"),
+            WrittenOutNumber::Four => String::from("four"),
+            WrittenOutNumber::Five => String::from("five"),
+            WrittenOutNumber::Six => String::from("six"),
+            WrittenOutNumber::Seven => String::from("seven"),
+            WrittenOutNumber::Eight => String::from("eight"),
+            WrittenOutNumber::Nine => String::from("nine"),
+        }
+    }
+    fn match_from_string(input: String) -> WrittenOutNumber {
+        match input.to_lowercase() {
+            String::from("one") => WrittenOutNumber::One,
+            String::from("two") => WrittenOutNumber::Two,
+            String::from("three") => WrittenOutNumber::Three,
+            String::from("four") => WrittenOutNumber::Four,
+            String::from("five") => WrittenOutNumber::Five,
+            String::from("six") => WrittenOutNumber::Six,
+            String::from("seven") => WrittenOutNumber::Seven,
+            String::from("eight") => WrittenOutNumber::Eight,
+            String::from("nine") => WrittenOutNumber::Nine,
+        }
+    }
+
+    fn to_int(&self) {
+
+    }
+}
+impl Calibration {
+    fn parse(input: Lines<BufReader<File>>) -> Option<Calibration> {
+        if let lines = input.flatten() {
+            // let raw_lines: Vec<String> = lines.collect::<Vec<String>>();
+            let mut raw_lines: Vec<String> = Vec::new();
+            let mut parsed_lines: Vec<Vec<u32>> = Vec::new();
+            let mut calibration_values: Vec<u32> = Vec::new();
+            for line in lines {
+                raw_lines.push(line);
+                parsed_lines.push(line);
+            }
+            Some(Calibration{
+                raw_lines,
+                parsed_lines,
+                calibration_values,
+            })
+        } else {
+            None
+        }
+    }
+}
+// struct CalibrationDocument {
+//     reader: BufReader<File>,
+//     calibration_value: CalibrationValue,
+// }
+
+fn read_lines_again<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>> where P: AsRef<Path>, {
+    let file = File::open(filename)?;
+    Ok(io::BufReader::new(file).lines())
+}
+fn part_two(){
+    let cal_test = Calibration::parse(read_lines_again("input_small_pt2.txt").unwrap());
+    println!("cal test {:?}", cal_test);
+}
+
 // fn main() {
 //     let mut parsed_document: Vec<(String, String)> = Vec::new();
 //     if let Ok(lines) = read_lines("input.txt") {
