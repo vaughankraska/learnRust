@@ -19,6 +19,7 @@
       <sourceFolder url="file://$MODULE_DIR$/projects/rust_by_example/primitives/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/advent_of_code/2023/day_one_trebuchet/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/rust_by_example/variable_bindings/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/projects/advent_of_code/2023/day_2/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/projects/control/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/functions/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/guessing_game/target" />
@@ -35,6 +36,7 @@
       <excludeFolder url="file://$MODULE_DIR$/projects/rust_by_example/primitives/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/advent_of_code/2023/day_one_trebuchet/target" />
       <excludeFolder url="file://$MODULE_DIR$/projects/rust_by_example/variable_bindings/target" />
+      <excludeFolder url="file://$MODULE_DIR$/projects/advent_of_code/2023/day_2/target" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
