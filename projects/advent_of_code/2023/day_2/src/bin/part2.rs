@@ -50,9 +50,9 @@ fn part_2(input: &str) -> u32 {
 
             (game_id, color_map)
         })
-    .collect::<Vec<(u32, (CubePull, CubePull, CubePull))>>();
-    dbg!(answer);
-    100_000
+    .fold(0, |acc, thing| acc + thing.1.0.count*thing.1.1.count*thing.1.2.count);
+
+    answer
 }
 
 #[cfg(test)]
